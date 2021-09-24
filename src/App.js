@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 import Home from "./views/Home"
 import Demo from "./views/Demo"
 import Details from "./views/Details"
+import CardMovies from "./components/CardMovies";
+
 
 
 function App() {
@@ -17,6 +19,9 @@ function App() {
           </Route>
           <Route exact path="/demo">
             <Demo/>
+          </Route>
+          <Route exact path="/Movies">
+            <CardMovies/>
           </Route>
           <Route exact path="/demo/:id">
             <Details/>
