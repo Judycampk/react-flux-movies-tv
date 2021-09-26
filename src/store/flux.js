@@ -2,7 +2,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			home:[],
-			movies:[]
+			upcoming:[],
+			trending:[]
 		},
 		actions: {
 			// Usa getActions para llamar una function dentro de una fuction. Te dejo un ejemplo
@@ -10,19 +11,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().changeColor("green");
 			},
             //funcion de ejemplo para hacer peticiones fetch
-			loadCarousel: () => {
+			loadMovies: () => {
 				fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
         		.then(response => response.json())
         		.then(data =>setStore({home:data.results}));
+
+				fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
+				.then(response => response.json())
+				.then(data=>setStore({upcoming:data.results}));
+
+				fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
+				.then(response => response.json())
+				.then(data => setStore({trending:data.results}));
 						
 				/**
 					fetch().then().then(data => setStore({ demo: data.bar }))
 				*/
-			},
-			loadMovies:() => {
-				fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
-        		.then(response=>response.json())
-        		.then(data =>setStore({movies:data.results}));
 			},
 			changeColor: (color) => {
                 //actualiza un dato de la global store

@@ -4,10 +4,6 @@ import { Context } from "../store/appContext";
 const Carousel = () => {
   const {store,actions} = useContext(Context);
 
-    useEffect(()=>{
-      actions.loadCarousel();
-    },[]);
-
       return (
         <div
           id="carouselExampleCaptions"

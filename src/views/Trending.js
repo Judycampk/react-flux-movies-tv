@@ -1,19 +1,12 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React, { useState,useEffect} from 'react';
+import React, {useContext} from 'react';
+import { Context } from "../store/appContext";
 
+const Trending = () => {
 
-const Demo = () => {
-
-  const[caro,setCaro] = useState([]);
-  console.log(caro);
-
-  useEffect(()=>{
-      fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
-      .then(response => response.json())
-      .then(data => setCaro(data.results));
-  },[])
+    const{store} = useContext(Context);
 
   const config = {
     dots: true,
@@ -24,9 +17,9 @@ const Demo = () => {
     autoplay: true,
     autoplaySpeed: 2000,
   };
-    return ( 
-      <Slider {...config}>
-      {caro.map((x, i) => {
+
+    return ( <Slider {...config}>
+      {store.trending.map((x, i) => {
         return <div className="card text-white border-0">
         <img
           src={"https://image.tmdb.org/t/p/original" + x.backdrop_path}
@@ -38,9 +31,7 @@ const Demo = () => {
         </div>
       </div>
       })}
-    </Slider>
-     )
-};
+    </Slider> );
+}
  
-export default Demo; 
-
+export default Trending;

@@ -2,9 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./views/Home"
-import Demo from "./views/Demo"
-import Details from "./views/Details"
-import CardMovies from "./components/CardMovies";
+import Movies from "./components/CardMovies";
 
 
 
@@ -17,14 +15,8 @@ function App() {
           <Route exact path="/">
             <Home/>
           </Route>
-          <Route exact path="/demo">
-            <Demo/>
-          </Route>
           <Route exact path="/Movies">
-            <CardMovies/>
-          </Route>
-          <Route exact path="/demo/:id">
-            <Details/>
+            <Movies/>
           </Route>
           <Route to="*">
             <h2>Not found - 404</h2>
