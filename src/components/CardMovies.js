@@ -1,13 +1,9 @@
-import React,{useContext} from "react";
-import { Context } from "../store/appContext";
+import React from "react";
 import { Link} from "react-router-dom";
 
 const CardMovies = (props) => {
 
-  console.log(props);
 
-    const{store} = useContext(Context);
-    
     return (
       <div
         className="card p-0 m-2 bg-transparent border-0 shadow-lg gray"

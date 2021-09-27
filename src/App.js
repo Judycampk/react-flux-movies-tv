@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./views/Home"
-import Movies from "./components/CardMovies";
+import Movies from "./views/Movies";
 
 
 

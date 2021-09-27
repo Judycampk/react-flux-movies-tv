@@ -7,7 +7,7 @@ import { Context } from "../store/appContext";
 
 const Upcoming = () => {
 
-  const{store} = useContext(Context);
+  const {store} = useContext(Context);
 
   const config = {
     dots: true,
@@ -18,6 +18,8 @@ const Upcoming = () => {
     autoplay: true,
     autoplaySpeed: 2000,
   };
+
+  // console.log(store.upcoming);
     return ( 
       <Slider {...config}>
       {store.upcoming.map((x, i) => {

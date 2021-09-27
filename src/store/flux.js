@@ -16,17 +16,24 @@ const getState = ({ getStore, getActions, setStore }) => {
         		.then(response => response.json())
         		.then(data =>setStore({home:data.results}));
 
-				fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
-				.then(response => response.json())
-				.then(data=>setStore({upcoming:data.results}));
+				// fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
+				// .then(response => response.json())
+				// .then(data=>setStore({upcoming:data.results}));
 
-				fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
-				.then(response => response.json())
-				.then(data => setStore({trending:data.results}));
+				// fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
+				// .then(response => response.json())
+				// .then(data => setStore({trending:data.results}));
 						
 				/**
 					fetch().then().then(data => setStore({ demo: data.bar }))
 				*/
+			},
+			   //funcion de ejemplo para hacer peticiones fetch
+			   loadUpComing: () => {
+				fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
+				.then(response => response.json())
+				.then(data=>setStore({upcoming:data.results}));
+
 			},
 			changeColor: (color) => {
                 //actualiza un dato de la global store

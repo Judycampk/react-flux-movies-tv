@@ -1,8 +1,8 @@
-import React, { useState,useEffect,useContext } from 'react';
+import React, { useContext } from 'react';
 import { Context } from "../store/appContext";
 
 const Carousel = () => {
-  const {store,actions} = useContext(Context);
+  const {store} = useContext(Context);
 
       return (
         <div

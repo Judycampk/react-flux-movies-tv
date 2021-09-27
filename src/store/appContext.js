@@ -23,6 +23,7 @@ import getState from "./flux.js"; //importamos getState
 			 *
 			 **/
       state.actions.loadMovies();
+      state.actions.loadUpComing();
 		}, []);
 
     return (
