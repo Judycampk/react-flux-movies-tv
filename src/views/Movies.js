@@ -5,6 +5,7 @@ import CardMovies from "../components/CardMovies";
 const Movies = () => {
 
     const {store} = useContext(Context);
+    
     return ( 
         <div className="container-fluid kenburns-top">
             <div className="d-flex ms-5 ps-5">

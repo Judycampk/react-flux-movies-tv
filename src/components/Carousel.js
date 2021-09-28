@@ -7,7 +7,7 @@ const Carousel = () => {
       return (
         <div
           id="carouselExampleCaptions"
-          className="carousel slide border-0"
+          className="carousel slide border-0 position-relative pe-0"
           data-bs-ride="carousel"
         >
           {store.home.map((item, index) =>
@@ -31,7 +31,10 @@ const Carousel = () => {
                   className="d-block w-100"
                   alt="..."
                 />
-                <div className="carousel-caption d-none d-md-block"></div>
+                <div className="carousel-caption position-absolute d-none d-md-block top-50 start-0 translate-middle-y text-start bg-dark bg-opacity-50 mb-5 ps-4">
+                <h1 className="ps-4 fw-bold mb-4">{item.title}</h1>
+                <p className="ps-4 fw-bold">{item.overview}</p>
+                </div>
               </div>
             )
           )}

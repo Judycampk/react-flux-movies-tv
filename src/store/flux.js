@@ -5,12 +5,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 			upcoming:[],
 			trending:[],
 			shows:[],
-			people:[]
+			people:[],
+			favourites:[]
 		},
 		actions: {
 			// Usa getActions para llamar una function dentro de una fuction. Te dejo un ejemplo
-			exampleFunction: () => {
-				getActions().changeColor("green");
+			addFav: favorito => {
+				setStore({
+					// favoritos = favoritos en store + lo nuevo que viene por el parametro
+					favourites: getStore().favourites.concat(favorito)
+				});
+			},
+			removFav: favorito => {
+				setStore({
+					favourites: getStore().favourites.filter(function(item, index) {
+						// return favorito.id !== item.id;
+						if (favorito.id !== item.id) {
+							return item;
+						}
+					})
+				});
 			},
             //funcion de ejemplo para hacer peticiones fetch
 			loadMovies: () => {

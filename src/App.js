@@ -7,6 +7,7 @@ import Shows from "./views/Shows";
 import People from "./views/People";
 import MoviesDetails from "./views/MoviesDetails";
 import TvDetails from "./views/TvDetails";
+import PeopleDetails from "./views/PeopleDetails";
 
 
 
@@ -19,20 +20,23 @@ function App() {
           <Route exact path="/">
             <Home/>
           </Route>
-          <Route exact path="/Movies">
+          <Route exact path="/movies">
             <Movies/>
           </Route>
-          <Route exact path="/Movies/:id">
+          <Route exact path="/movies/:id">
             <MoviesDetails/>
           </Route>
-          <Route exact path="/Shows">
+          <Route exact path="/shows">
             <Shows/>
           </Route>
-          <Route exact path="/Shows/:id">
+          <Route exact path="/shows/:id">
             <TvDetails/>
           </Route>
-          <Route exact path="/People">
+          <Route exact path="/people">
             <People/>
+          </Route>
+          <Route exact path="/people/:id">
+            <PeopleDetails/>
           </Route>
           <Route to="*">
             <h2>Not found - 404</h2>

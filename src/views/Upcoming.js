@@ -23,16 +23,23 @@ const Upcoming = () => {
     return ( 
       <Slider {...config}>
       {store.upcoming.map((x, i) => {
-        return <div className="card text-white border-0">
-        <img
-          src={"https://image.tmdb.org/t/p/original" + x.backdrop_path}
-          className="card-img"
-          alt="..."
-        />
-        <div className="card-img-overlay d-flex justify-content-start align-items-end">
-        <div classname="card-title">{x.title}</div>
-        </div>
-      </div>
+        return (
+          <div className="row row-cols-1">
+            <div className="col">
+              <div className="card h-100">
+                <div className="card text-white fs-6 fw-bold border-0 bg-transparent">
+                  <img
+                    src={
+                      "https://image.tmdb.org/t/p/original" + x.poster_path
+                    }
+                    className="card-img"
+                    alt="..."
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        );
       })}
     </Slider>
      )

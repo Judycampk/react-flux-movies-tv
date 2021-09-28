@@ -1,7 +1,13 @@
 import { Link} from "react-router-dom";
+import React, {useContext} from 'react';
+import { Context } from "../store/appContext";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 const CardMovies = (props) => {
-  console.log(props);
+
+  const { store, actions } = useContext(Context);
+  
     return (
       <div
         className="card p-0 m-2 bg-transparent border-0 shadow-lg gray"
@@ -14,8 +20,11 @@ const CardMovies = (props) => {
             className="link-danger"
             style={{ textDecoration: "none" }}
           >
-            <h5 className="card-title fs-5 fw-bold">{props.title}</h5>
+            <button type="button" className="btn btn-outline-warning me-5">More</button>
           </Link>
+          <button type="button" className="btn btn-outline-danger ms-3" onClick={() => {
+								actions.addFav();
+							}}><FontAwesomeIcon icon={faHeart} /></button>
         </div>
       </div>
     );

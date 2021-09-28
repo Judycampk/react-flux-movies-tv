@@ -5,6 +5,7 @@ import CardShows from "../components/CardMovies";
 const Shows = () => {
 
     const {store} = useContext(Context);
+    
     return (
       <div>
         <div className="container-fluid foto d-flex">

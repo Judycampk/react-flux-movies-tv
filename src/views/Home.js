@@ -6,19 +6,23 @@ import Upcoming from "./Upcoming";
 
 const Home = () => {
     return ( 
-        <>
+        <div className="row gradient">
         <div className="container-fluid ps-0 pe-0 border-0 row">
             <Carousel/>
           </div>
-          <div>
-            <h1>Upcoming-Movies</h1>
+          <div className="container border-0 mt-5 mb-5 ms-4 upcoming" >
+            <h1 className="text-danger fw-bold">
+              Upcoming-Movies
+            </h1>
             <Upcoming/>
           </div>
-          <div>
-            <h2>Trending</h2>
+          <div className="container-fluid border-0 mt-5 mb-5 ms-4 trending">
+            <h2 className="text-danger fw-bold">
+              Trending
+            </h2>
             <Trending/>
           </div>
-        </>
+        </div>
      );
 }
  

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const MoviesDetails = () => {
 
     const{id} = useParams ();
-    const[moviesDetails,setMoviesDetails]= useState({})
+    const[moviesDetails,setMoviesDetails]= useState({});
 
     useEffect(()=>{
         fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
@@ -41,7 +41,7 @@ const MoviesDetails = () => {
               <p className="text-warning fs-6 fw-bold">{moviesDetails.vote_average}</p>
               <p className="m-0">Date</p>
               <p className="text-warning fs-6 fw-bold mb-4">{moviesDetails.release_date}</p>
-              <Link to="/Movies"><button type="button" className="btn btn-outline-danger">Volver</button></Link>
+              <Link to="/movies"><button type="button" className="btn btn-outline-danger">Volver</button></Link>
             </div>
           </div>
         </div>
