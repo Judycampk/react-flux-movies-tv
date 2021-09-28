@@ -18,6 +18,12 @@ const Navbar = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/Movies">Movies</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Shows">TV Shows</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/People">People</Link>
+            </li>
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Prueba de que bootstrap Js funciona

@@ -6,7 +6,9 @@ const Movies = () => {
 
     const {store} = useContext(Context);
     return ( 
-        <div>
+        <div className="container-fluid kenburns-top">
+            <div className="d-flex ms-5 ps-5">
+                <div className="row">
             {store.home.map((item)=>
                 <CardMovies
                 key={item.id}
@@ -14,6 +16,8 @@ const Movies = () => {
                 image={item.poster_path}
                 id={item.id}/>
             )}
+                </div>
+            </div>
         </div>
      );
 }

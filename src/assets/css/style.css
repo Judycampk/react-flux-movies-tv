@@ -91,3 +91,35 @@ h3 {
   z-index: 1;
   color:red !important;
 }
+
+/* MOVIES STYLES */
+
+.kenburns-top{
+  background-image: url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/8870913E623C4000F398A9714D64A1B7324CC70B721C0A4C0EAC0B38B9FD5639/scale?width=2880&aspectRatio=1.78&format=jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+
+.gray img{
+  -webkit-filter: grayscale(100%);
+filter: grayscale(100%);
+-webkit-transition: .3s ease-in-out;
+transition: .3s ease-in-out;
+}
+.gray:hover img{
+  -webkit-filter: grayscale(0);
+filter: grayscale(0);
+}
+
+/* PROGRAMAS STYLE */
+.foto{
+  background-image: url('https://wallpapercave.com/wp/wp5680617.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+/* PERSONAS STYLE */
+.gradiente2{
+  background: linear-gradient(to bottom, rgba(0, 16, 29, 0.952), rgb(255, 255, 255));
+}

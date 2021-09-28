@@ -3,7 +3,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			home:[],
 			upcoming:[],
-			trending:[]
+			trending:[],
+			shows:[],
+			people:[]
 		},
 		actions: {
 			// Usa getActions para llamar una function dentro de una fuction. Te dejo un ejemplo
@@ -15,6 +17,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
         		.then(response => response.json())
         		.then(data =>setStore({home:data.results}));
+						
+				/**
+					fetch().then().then(data => setStore({ demo: data.bar }))
+				*/
+			},
+			loadShows: () => {
+				fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
+        		.then(response => response.json())
+        		.then(data =>setStore({shows:data.results}));
+						
+				/**
+					fetch().then().then(data => setStore({ demo: data.bar }))
+				*/
+			},
+			loadPeople: () => {
+				fetch(`https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
+        		.then(response => response.json())
+        		.then(data =>setStore({people:data.results}));
 						
 				/**
 					fetch().then().then(data => setStore({ demo: data.bar }))
