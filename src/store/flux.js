@@ -16,16 +16,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					favourites: getStore().favourites.concat(favorito)
 				});
 			},
-			removFav: favorito => {
-				setStore({
-					favourites: getStore().favourites.filter(function(item, index) {
-						// return favorito.id !== item.id;
-						if (favorito.id !== item.id) {
-							return item;
-						}
-					})
-				});
-			},
+			// removFav: favorito => {
+			// 	setStore({
+			// 		favourites: getStore().favourites.filter(function(item, index) {
+			// 			// return favorito.id !== item.id;
+			// 			if (favorito.id !== item.id) {
+			// 				return item;
+			// 			}
+			// 		})
+			// 	});
+			// },
             //funcion de ejemplo para hacer peticiones fetch
 			loadMovies: () => {
 				fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)

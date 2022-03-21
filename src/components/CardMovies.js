@@ -7,6 +7,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 const CardMovies = (props) => {
 
   const { store, actions } = useContext(Context);
+  // console.log(store.favourites);
   
     return (
       <div
@@ -20,10 +21,10 @@ const CardMovies = (props) => {
             className="link-danger"
             style={{ textDecoration: "none" }}
           >
-            <button type="button" className="btn btn-outline-warning me-5">More</button>
+            <button type="button" className="btn btn-outline-warning me-5 border-0">More</button>
           </Link>
-          <button type="button" className="btn btn-outline-danger ms-3" onClick={() => {
-								actions.addFav();
+          <button type="button" className="btn btn-outline-danger ms-3 border-0" onClick={() => {
+								actions.addFav(props.title);
 							}}><FontAwesomeIcon icon={faHeart} /></button>
         </div>
       </div>

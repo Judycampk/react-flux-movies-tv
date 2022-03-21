@@ -1,6 +1,6 @@
 import { Context } from "../store/appContext";
 import React, {useContext} from "react";
-import CardShows from "../components/CardMovies";
+import CardShows from "../components/CardShows";
 
 const Shows = () => {
 

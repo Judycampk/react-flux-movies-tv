@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 
 const Trending = () => {
 
-    const{store} = useContext(Context);
+  const{store} = useContext(Context);
 
   const config = {
     dots: true,

@@ -51,7 +51,7 @@ const Navbar = () => {
 					aria-expanded="false">
 					{store.favourites.length + ` Favourites`}
 				</button>
-				<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<div className="dropdown-menu">
 					{store.favourites.map((item, index) => {
 						return (
 							<Link key={index} className="dropdown-item" to="/">

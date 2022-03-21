@@ -12,7 +12,7 @@ const Carousel = () => {
         >
           {store.home.map((item, index) =>
             index === 0 ? (
-              <div className="carousel-item active">
+              <div className="carousel-item active" key={item.id}>
                 <img
                   src={
                     "https://image.tmdb.org/t/p/original" + item.backdrop_path
@@ -23,7 +23,7 @@ const Carousel = () => {
                 <div className="carousel-caption d-none d-md-block"></div>
               </div>
             ) : (
-              <div className="carousel-item">
+              <div className="carousel-item" key={item.id}>
                 <img
                   src={
                     "https://image.tmdb.org/t/p/original" + item.backdrop_path
